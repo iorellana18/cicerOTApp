@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/SearchContent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        />
+
+    <EditText
+        android:id="@+id/SearchProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="80dp"
+        android:inputType="text"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:textColorHint="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
+        android:textSize="20sp"
+        android:hint="Búsqueda"/>
+
+    <ImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_search"
+        android:tint="@color/colorPrimary"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+
+
+    <FrameLayout
+        android:id="@+id/FrameProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/SearchProfile"
+        style="@style/Divider"
+        android:background="@drawable/paper"/>
+
+
+
+    <ImageView
+        android:id="@+id/mailIcon"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_dialog_email"
+        android:tint="@color/SeriousGray"
+        />
+
+    <ImageView
+        android:id="@+id/ProfilePortada"
+        android:layout_below="@+id/mailIcon"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/paisaje4"
+        />
+
+
+    <ImageView
+        android:id="@+id/fireIcon"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="30dp"
+        android:layout_toLeftOf="@+id/mailIcon"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fire"
+        />
+
+    <ImageView
+        android:id="@+id/AnotherIcon"
+        android:layout_toRightOf="@id/mailIcon"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="50dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:tint="@color/black"
+        />
+
+    <ImageView
+        android:id="@+id/ProfileImage"
+        android:layout_below="@+id/SearchProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="170dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:background="@color/colorPrimary"
+        android:padding="5dp"
+        android:src="@drawable/juan"/>
+
+    <TextView
+        android:id="@+id/ProfileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ProfileImage"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="name:"/>
+
+    <TextView
+        android:id="@+id/ProfileDescription"
+        android:layout_below="@+id/ProfileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:text="Vive en:\nSantiago - Chile\n\n0 Tours \n\n0 reviews"
+        />
+</RelativeLayout>

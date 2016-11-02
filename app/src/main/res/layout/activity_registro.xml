@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/registroImageView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:id="@+id/Registrarse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:layout_below="@+id/registroImageView"
+        android:text="Registrarse"/>
+
+    <EditText
+        android:id="@+id/nombreEditText"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/Registrarse"
+        android:layout_marginLeft="20dp"
+        android:hint="Nombre"/>
+    <EditText
+        android:id="@+id/apellidoEditText"
+        android:layout_below="@+id/Registrarse"
+        android:layout_toRightOf="@+id/nombreEditText"
+        android:layout_width="160dp"
+        android:layout_marginTop="25dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="15dp"
+        android:hint="Apellido"/>
+
+    <EditText
+        android:id="@+id/RegistroCorreo"
+        android:layout_below="@+id/nombreEditText"
+        android:layout_width="390dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Email"/>
+    <EditText
+        android:id="@+id/RegistroContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/RegistroCorreo"
+        android:hint="Contraseña"/>
+
+    <EditText
+        android:id="@+id/RegistroConfirmaContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/RegistroContraseña"
+        android:hint="Confirmar Contraseña"/>
+    <Button
+        android:id="@+id/RegistroBoton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:layout_below="@+id/RegistroConfirmaContraseña"
+        android:text="Registrarse"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/RegistroText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RegistroBoton"
+        android:textColor="@color/black"
+        android:layout_marginLeft="50dp"
+        android:textSize="17dp"
+        android:text="Ya tienes una cuenta?"/>
+    <TextView
+        android:id="@+id/RegistroClickeableText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/RegistroBoton"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="17dp"
+        android:onClick="onClick"
+        android:clickable="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/RegistroText"
+        android:text="Iniciar sesión"/>
+</RelativeLayout>
