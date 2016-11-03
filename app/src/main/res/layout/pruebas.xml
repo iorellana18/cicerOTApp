@@ -57,23 +57,76 @@
 
 
 
-    <ImageView
-        android:id="@+id/mailIcon"
+     <ImageView
+        android:id="@+id/menuIcon"
         android:layout_below="@+id/SearchContent"
-        android:layout_width="130dp"
+        android:layout_width="30dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
         android:scaleType="centerCrop"
-        android:src="@android:drawable/ic_dialog_email"
+        android:src="@mipmap/ic_more_vert_black_24dp"
         android:tint="@color/SeriousGray"
         />
 
     <ImageView
+        android:id="@+id/mailIcon"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="90dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/menuIcon"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_email_black_24dp"
+        android:tint="@color/SeriousGray"
+    />
+
+    <ImageView
+        android:id="@+id/fireIcon"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="80dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/mailIcon"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fire"
+        />
+
+    <ImageView
+        android:id="@+id/galleryIcon"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="90dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/fireIcon"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:tint="@color/black"
+        />
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="90dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_height="50dp"
+        android:layout_toLeftOf="@+id/galleryIcon"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_person_black_24dp"
+        android:tint="@color/colorPrimaryDark"
+        />
+
+    <ImageView
         android:id="@+id/ProfilePortada"
-        android:layout_below="@+id/mailIcon"
+        android:layout_below="@+id/menuIcon"
         android:layout_width="match_parent"
         android:layout_height="190dp"
         android:scaleType="centerCrop"
@@ -81,32 +134,9 @@
         />
 
 
-    <ImageView
-        android:id="@+id/fireIcon"
-        android:layout_below="@+id/SearchContent"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="30dp"
-        android:layout_toLeftOf="@+id/mailIcon"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fire"
-        />
 
-    <ImageView
-        android:id="@+id/AnotherIcon"
-        android:layout_toRightOf="@id/mailIcon"
-        android:layout_below="@+id/SearchContent"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="50dp"
-        android:layout_marginTop="10dp"
-        android:scaleType="centerCrop"
-        android:src="@android:drawable/ic_menu_gallery"
-        android:tint="@color/black"
-        />
+
+
 
     <ImageView
         android:id="@+id/ProfileImage"
