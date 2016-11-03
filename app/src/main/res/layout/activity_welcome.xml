@@ -33,7 +33,7 @@
         android:text="Login"
         android:layout_above="@+id/WelcomeRegistro"
         android:textColor="@color/colorPrimary"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@drawable/highlightbutton"/>
 
     <Button
         android:id="@+id/WelcomeRegistro"
@@ -42,5 +42,5 @@
         android:text="Registrarse"
         android:layout_alignParentBottom="true"
         android:textColor="@color/black"
-        android:background="@color/neige"/>
+        android:background="@drawable/highlight_white"/>
 </RelativeLayout>

@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
 
     <FrameLayout
         android:id="@+id/SearchContent"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="@color/colorPrimaryDark"
         />
 
-    <EditText
+    <TextView
         android:id="@+id/SearchProfile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="20dp"
+        android:layout_height="29dp"
         android:layout_gravity="top"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="5dp"
         android:inputType="text"
         android:textColor="@color/colorPrimary"
         android:layout_alignParentTop="true"
         android:textColorHint="@color/colorPrimary"
         android:textColorLink="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="15sp"
+        android:background="@drawable/highlightbutton"
         android:hint="Búsqueda"/>
 
     <ImageView
         android:id="@+id/searchIcon"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
-        android:src="@android:drawable/ic_menu_search"
+        android:src="@mipmap/ic_search_black_48dp"
         android:tint="@color/colorPrimary"
         />
     <View
         android:layout_width="match_parent"
         android:layout_below="@+id/SearchProfile"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginRight="30dp"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
 
-
-    <FrameLayout
-        android:id="@+id/FrameProfile"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/SearchProfile"
-        style="@style/Divider"
-        android:background="@color/colorPrimary"/>
 
 
 
@@ -59,12 +57,14 @@
         android:id="@+id/menuIcon"
         android:layout_below="@+id/SearchContent"
         android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginTop="5dp"
+        android:paddingBottom="5dp"
         android:layout_alignParentRight="true"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_more_vert_black_24dp"
         android:tint="@color/SeriousGray"
+        android:background="@drawable/highlight_white"
         />
 
     <ImageView
@@ -73,10 +73,12 @@
         android:layout_width="90dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginTop="5dp"
+        android:paddingBottom="5dp"
         android:layout_toLeftOf="@+id/menuIcon"
         android:scaleType="centerCrop"
+        android:background="@drawable/highlight_white"
         android:src="@mipmap/ic_email_black_48dp"
         android:tint="@color/SeriousGray"
         />
@@ -87,11 +89,14 @@
         android:layout_width="80dp"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
+        android:paddingBottom="5dp"
         android:layout_toLeftOf="@+id/mailIcon"
         android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/fire"
+        android:src="@mipmap/ic_whatshot_black_48dp"
+        android:tint="@color/SeriousGray"
+        android:background="@drawable/highlight_white"
         />
 
     <ImageView
@@ -100,12 +105,14 @@
         android:layout_width="90dp"
         android:paddingRight="30dp"
         android:paddingLeft="30dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
+        android:paddingBottom="5dp"
         android:layout_toLeftOf="@+id/fireIcon"
         android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
-        android:src="@android:drawable/ic_menu_gallery"
-        android:tint="@color/black"
+        android:src="@mipmap/ic_collections_black_48dp"
+        android:tint="@color/SeriousGray"
+        android:background="@drawable/highlight_white"
         />
 
     <ImageView
@@ -114,19 +121,27 @@
         android:layout_width="90dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
+        android:paddingBottom="5dp"
         android:layout_toLeftOf="@+id/galleryIcon"
         android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
+        android:background="@drawable/highlight_white"
         android:src="@mipmap/ic_person_black_48dp"
         android:tint="@color/colorPrimaryDark"
         />
 
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/menuIcon"
+        android:layout_height="5dp"
+        android:background="@android:color/darker_gray"/>
+
     <ImageView
         android:id="@+id/ProfilePortada"
-        android:layout_below="@+id/menuIcon"
+        android:layout_below="@+id/separator"
         android:layout_width="match_parent"
-        android:layout_marginTop="5dp"
         android:layout_height="190dp"
         android:scaleType="centerCrop"
         android:src="@drawable/paisaje4"
@@ -140,12 +155,12 @@
     <ImageView
         android:id="@+id/ProfileImage"
         android:layout_below="@+id/SearchProfile"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginTop="170dp"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/highlight_white"
         android:padding="5dp"
         android:src="@drawable/juan"/>
 
@@ -178,17 +193,19 @@
         android:layout_marginLeft="20dp"
         android:text="Santiago (Chile)"
         android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/highlight_white"
         />
 
 
     <TextView
         android:id="@+id/numberOfTours"
         android:layout_below="@+id/placeProfile"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="25sp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="10dp"
         android:text="0"
         android:textColor="@color/colorPrimaryDark"
         />
@@ -200,7 +217,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="25sp"
-        android:layout_marginLeft="10dp"
         android:text="tours"
         />
 

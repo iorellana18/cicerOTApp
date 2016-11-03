@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/SearchContent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimaryDark"
+        />
+
+    <EditText
+        android:id="@+id/SearchProfile"
+        android:layout_width="match_parent"
+        android:layout_marginRight="30dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="20dp"
+        android:layout_height="29dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:textColorHint="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
+        android:textSize="15sp"
+        android:background="@drawable/highlightbutton"
+        android:hint="Búsqueda"/>
+
+    <ImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_search_black_48dp"
+        android:tint="@color/colorPrimary"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@+id/SearchProfile"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+
+</RelativeLayout>
