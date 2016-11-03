@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="80dp"
         android:inputType="text"
         android:textColor="@color/colorPrimary"
@@ -38,8 +37,7 @@
         />
     <View
         android:layout_width="match_parent"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/SearchProfile"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_height="1dp"
@@ -53,7 +51,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/SearchProfile"
         style="@style/Divider"
-        android:background="@drawable/paper"/>
+        android:background="@color/colorPrimary"/>
 
 
 
@@ -61,8 +59,8 @@
         android:id="@+id/menuIcon"
         android:layout_below="@+id/SearchContent"
         android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
         android:layout_alignParentRight="true"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_more_vert_black_24dp"
@@ -73,13 +71,13 @@
         android:id="@+id/mailIcon"
         android:layout_below="@+id/SearchContent"
         android:layout_width="90dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
         android:layout_toLeftOf="@+id/menuIcon"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_email_black_24dp"
+        android:src="@mipmap/ic_email_black_48dp"
         android:tint="@color/SeriousGray"
         />
 
@@ -87,11 +85,11 @@
         android:id="@+id/fireIcon"
         android:layout_below="@+id/SearchContent"
         android:layout_width="80dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:layout_height="50dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:layout_height="30dp"
         android:layout_toLeftOf="@+id/mailIcon"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
         android:src="@drawable/fire"
         />
@@ -100,11 +98,11 @@
         android:id="@+id/galleryIcon"
         android:layout_below="@+id/SearchContent"
         android:layout_width="90dp"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:layout_height="50dp"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:layout_height="30dp"
         android:layout_toLeftOf="@+id/fireIcon"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
         android:src="@android:drawable/ic_menu_gallery"
         android:tint="@color/black"
@@ -114,13 +112,13 @@
         android:id="@+id/profileIcon"
         android:layout_below="@+id/SearchContent"
         android:layout_width="90dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_height="50dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_height="30dp"
         android:layout_toLeftOf="@+id/galleryIcon"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_person_black_24dp"
+        android:src="@mipmap/ic_person_black_48dp"
         android:tint="@color/colorPrimaryDark"
         />
 
@@ -128,6 +126,7 @@
         android:id="@+id/ProfilePortada"
         android:layout_below="@+id/menuIcon"
         android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
         android:layout_height="190dp"
         android:scaleType="centerCrop"
         android:src="@drawable/paisaje4"
@@ -155,18 +154,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ProfileImage"
-        android:textSize="25dp"
+        android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:text="name:"/>
 
     <TextView
-        android:id="@+id/ProfileDescription"
+        android:id="@+id/ViveEn"
         android:layout_below="@+id/ProfileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:layout_marginLeft="20dp"
-        android:text="Vive en:\nSantiago - Chile\n\n0 Tours \n\n0 reviews"
+        android:text="Vive en:"
         />
+
+    <TextView
+        android:id="@+id/placeProfile"
+        android:layout_below="@+id/ViveEn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:text="Santiago (Chile)"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+
+    <TextView
+        android:id="@+id/numberOfTours"
+        android:layout_below="@+id/placeProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:text="0"
+        android:textColor="@color/colorPrimaryDark"
+        />
+    <TextView
+        android:id="@+id/Tours"
+        android:layout_below="@+id/placeProfile"
+        android:layout_toRightOf="@+id/numberOfTours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_marginLeft="10dp"
+        android:text="tours"
+        />
+
 </RelativeLayout>
