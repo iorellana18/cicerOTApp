@@ -1,25 +1,27 @@
 package cl.usach.CICEROT;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by Ian on 01-11-2016.
- */
-public class ProfileActivity extends Activity {
+public class ProfileActivity extends Fragment {
 
-    TextView Nombre;
+    TextView name;
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        Nombre = (TextView) findViewById(R.id.ProfileName);
-
-        String getNombre = getIntent().getStringExtra("nombre");
-
-        Nombre.setText(getNombre);
+        return inflater.inflate(R.layout.activity_profile, container, false);
 
     }
+
+
+
 }
+

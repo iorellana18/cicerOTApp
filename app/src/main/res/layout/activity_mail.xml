@@ -1,131 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-        <FrameLayout
-            android:id="@+id/SearchContent"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/colorPrimaryDark"
-            />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Tab 3"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-        <TextView
-            android:id="@+id/SearchProfile"
-            android:layout_width="match_parent"
-            android:layout_marginRight="30dp"
-            android:paddingTop="5dp"
-            android:paddingLeft="20dp"
-            android:layout_height="29dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="5dp"
-            android:inputType="text"
-            android:textColor="@color/colorPrimary"
-            android:layout_alignParentTop="true"
-            android:textColorHint="@color/colorPrimary"
-            android:textColorLink="@color/colorPrimary"
-            android:textSize="15sp"
-            android:background="@drawable/highlightbutton"
-            android:hint="Búsqueda"/>
-
-        <ImageView
-            android:id="@+id/searchIcon"
-            android:layout_width="20dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_search_black_48dp"
-            android:tint="@color/colorPrimary"
-            />
-        <View
-            android:layout_width="match_parent"
-            android:layout_below="@+id/SearchProfile"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="30dp"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
-
-
-
-
-
-        <ImageView
-            android:id="@+id/menuIcon"
-            android:layout_below="@+id/SearchContent"
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="5dp"
-            android:paddingBottom="5dp"
-            android:layout_alignParentRight="true"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_more_vert_black_24dp"
-            android:tint="@color/SeriousGray"
-            android:background="@drawable/highlight_white"
-            />
-
-        <ImageView
-            android:id="@+id/mailIcon"
-            android:layout_below="@+id/SearchContent"
-            android:layout_width="90dp"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="5dp"
-            android:paddingBottom="5dp"
-            android:layout_toLeftOf="@+id/menuIcon"
-            android:scaleType="centerCrop"
-            android:background="@drawable/highlight_white"
-            android:src="@mipmap/ic_email_black_48dp"
-            android:tint="@color/colorPrimaryDark"
-            />
-
-        <ImageView
-            android:id="@+id/fireIcon"
-            android:layout_below="@+id/SearchContent"
-            android:layout_width="80dp"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
-            android:layout_height="35dp"
-            android:paddingBottom="5dp"
-            android:layout_toLeftOf="@+id/mailIcon"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_whatshot_black_48dp"
-            android:tint="@color/SeriousGray"
-            android:background="@drawable/highlight_white"
-            />
-
-        <ImageView
-            android:id="@+id/galleryIcon"
-            android:layout_below="@+id/SearchContent"
-            android:layout_width="90dp"
-            android:paddingRight="30dp"
-            android:paddingLeft="30dp"
-            android:layout_height="35dp"
-            android:paddingBottom="5dp"
-            android:layout_toLeftOf="@+id/fireIcon"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_collections_black_48dp"
-            android:tint="@color/SeriousGray"
-            android:background="@drawable/highlight_white"
-            />
-
-        <ImageView
-            android:id="@+id/profileIcon"
-            android:layout_below="@+id/SearchContent"
-            android:layout_width="90dp"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:layout_height="35dp"
-            android:paddingBottom="5dp"
-            android:layout_toLeftOf="@+id/galleryIcon"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerCrop"
-            android:background="@drawable/highlight_white"
-            android:src="@mipmap/ic_person_black_48dp"
-            android:tint="@color/SeriousGray"
-            />
 </RelativeLayout>

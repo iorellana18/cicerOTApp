@@ -37,8 +37,7 @@ public class LoginActivity extends Activity{
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-                intent.putExtra("nombre", Name.getText().toString());
+                Intent intent = new Intent(LoginActivity.this, Adapter.class);
                 startActivity(intent);
             }
         });
