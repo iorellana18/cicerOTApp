@@ -3,7 +3,7 @@
     <string name="app_name">cicerOT</string>
     <string-array name="Lugares">
         <item>Venecia</item>
-        <item>Viña del mat</item>
+        <item>Viña del mar</item>
         <item>Santiago</item>
         <item>Buenos aires</item>
         <item>Brasilia</item>
@@ -11,5 +11,17 @@
         <item>Miami</item>
         <item>Copenhague</item>
         <item>Pastos de ciencias</item>
+    </string-array>
+
+    <string-array name="Noticias">
+        <item>Viaje a venecia!</item>
+        <item>Viaje a Viña del mar</item>
+        <item>Viaje a Santiago</item>
+        <item>Viaje a Buenos aires</item>
+        <item>Brasilia</item>
+        <item>Viaje a New york</item>
+        <item>Viaje a Miami</item>
+        <item>Viaje a Copenhague</item>
+        <item>Viaje a Pastos de ciencias</item>
     </string-array>
 </resources>

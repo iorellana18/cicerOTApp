@@ -31,10 +31,22 @@
         android:hint="Búsqueda"/>
 
     <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_arrow_back_white_48dp"
+        android:tint="@color/colorPrimary"
+        />
+
+    <ImageView
         android:id="@+id/searchIcon"
         android:layout_width="20dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/backIcon"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_search_black_48dp"
@@ -43,7 +55,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_below="@+id/SearchProfile"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
