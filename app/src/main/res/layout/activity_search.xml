@@ -7,7 +7,7 @@
     <FrameLayout
         android:id="@+id/SearchContent"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
         />
 
@@ -47,6 +47,13 @@
         android:layout_marginRight="30dp"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:layout_below="@+id/SearchContent"
+        android:name="cl.usach.CICEROT.SearchListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </RelativeLayout>

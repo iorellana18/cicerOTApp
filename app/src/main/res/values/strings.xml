@@ -1,4 +1,15 @@
 <resources>
     <!-- My first test APP-->
     <string name="app_name">cicerOT</string>
+    <string-array name="Lugares">
+        <item>Venecia</item>
+        <item>Viña del mat</item>
+        <item>Santiago</item>
+        <item>Buenos aires</item>
+        <item>Brasilia</item>
+        <item>New york</item>
+        <item>Miami</item>
+        <item>Copenhague</item>
+        <item>Pastos de ciencias</item>
+    </string-array>
 </resources>
