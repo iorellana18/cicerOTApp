@@ -4,12 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/listContacts"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/textBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/neige"
+        />
+    <EditText
+        android:id="@+id/textBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Tab 3"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:layout_alignParentBottom="true"
+        android:inputType="text"
+        android:hint="Buscar contacto"/>
 
 </RelativeLayout>

@@ -24,4 +24,12 @@
         <item>Viaje a Copenhague</item>
         <item>Viaje a Pastos de ciencias</item>
     </string-array>
+
+    <string-array name="Contacts">
+        <item>Guía 1</item>
+        <item>Guía 2</item>
+        <item>Guía 3</item>
+        <item>Guía 4</item>
+        <item>Guía 5</item>
+    </string-array>
 </resources>

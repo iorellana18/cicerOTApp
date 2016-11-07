@@ -17,7 +17,6 @@ public class HotsActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_hots, container, false);
         list =(ListView)view.findViewById(R.id.listNotices);
 
-        //EDITED Code
         ArrayAdapter adapter =ArrayAdapter.createFromResource(getActivity(),
                 R.array.Noticias, android.R.layout.simple_list_item_1);
 
