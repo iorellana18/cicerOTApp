@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iconHotsList"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textHotsList"
+        android:layout_toRightOf="@+id/iconHotsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:paddingTop="6dp"
+        android:text="Santiago de noche"/>
+
+    <TextView
+        android:id="@+id/hotsNumberOfLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textHotsList"
+        android:layout_toRightOf="@+id/iconHotsList"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:text="553 Likes"/>
+
+    <TextView
+        android:id="@+id/hotsGuideName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textHotsList"
+        android:layout_toRightOf="@+id/hotsNumberOfLikes"
+        android:gravity="left"
+        android:text="Guia 1"/>
+
+    <TextView
+        android:id="@+id/hotsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/hotsNumberOfLikes"
+        android:layout_toRightOf="@+id/iconHotsList"
+        android:gravity="left"
+        android:text="Aventurate a una noche llena de sorpresas"/>
+
+</RelativeLayout>
