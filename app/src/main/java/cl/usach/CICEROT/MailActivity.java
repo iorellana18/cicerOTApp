@@ -12,8 +12,8 @@ public class MailActivity extends Fragment {
     ListView list;
     MailListAdapter adapter;
     int[] imagenes = {
-            R.mipmap.ic_person_black_48dp,
-            R.mipmap.ic_person_black_48dp,
+            R.drawable.ian,
+            R.drawable.elitos,
             R.mipmap.ic_person_black_48dp
     };
 

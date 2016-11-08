@@ -21,15 +21,17 @@ public class HotsListAdapter extends BaseAdapter {
     String[] descripciones;
     String[] likes;
     String[] guias;
+    String[] precios;
     LayoutInflater inflater;
 
-    public HotsListAdapter(Context context, String[] titulos, int[] imagenes, String[] likes, String[] guias, String[] descripciones) {
+    public HotsListAdapter(Context context, String[] titulos, int[] imagenes, String[] likes, String[] guias, String[] descripciones, String[] precios) {
         this.context = context;
         this.titulos = titulos;
         this.imagenes = imagenes;
         this.likes = likes;
         this.guias = guias;
         this.descripciones = descripciones;
+        this.precios = precios;
     }
 
     @Override
@@ -55,7 +57,7 @@ public class HotsListAdapter extends BaseAdapter {
         TextView textLikes;
         TextView textGuides;
         TextView textDescription;
-
+        TextView textPrices;
 
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -67,6 +69,7 @@ public class HotsListAdapter extends BaseAdapter {
         textLikes = (TextView) itemView.findViewById(R.id.hotsNumberOfLikes);
         textGuides = (TextView) itemView.findViewById(R.id.hotsGuideName);
         textDescription = (TextView) itemView.findViewById(R.id.hotsDescription);
+        textPrices = (TextView) itemView.findViewById(R.id.hotsPrice);
 
         //Setea campos
         txtTitle.setText(titulos[position]);
@@ -74,6 +77,7 @@ public class HotsListAdapter extends BaseAdapter {
         textLikes.setText(likes[position]);
         textGuides.setText(guias[position]);
         textDescription.setText(descripciones[position]);
+        textPrices.setText(precios[position]);
 
         return itemView;
     }

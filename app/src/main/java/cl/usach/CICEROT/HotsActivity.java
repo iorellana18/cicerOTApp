@@ -12,9 +12,9 @@ public class HotsActivity extends Fragment {
     ListView list;
     HotsListAdapter adapter;
     int[] imagenes = {
-            R.drawable.paisaje2,
-            R.drawable.paisaje3,
-            R.drawable.paisaje4
+            R.drawable.stgo,
+            R.drawable.playa,
+            R.drawable.montana
     };
 
     String[] likes = {
@@ -29,13 +29,19 @@ public class HotsActivity extends Fragment {
             "Sube la montaña",
     };
 
+    String[] precios = new String[]{
+            "$51.990",
+            "$40.000",
+            "$17.850",
+    };
+
     String[] guias = new String[]{
             "Ian Orellana",
             "Elías González",
             "Guia asesino777",
     };
     String[] descripcion = new String[]{
-            "Aventurate a una noche llena de sorpresas",
+            "Una noche llena de sorpresas",
             "Relajate este verano 1313",
             "Desafía tus miedos",
     };
@@ -47,7 +53,7 @@ public class HotsActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_hots, container, false);
         list =(ListView)view.findViewById(R.id.listNotices);
 
-        adapter = new HotsListAdapter(getContext(), titulo, imagenes,likes,guias,descripcion);
+        adapter = new HotsListAdapter(getContext(), titulo, imagenes,likes,guias,descripcion,precios);
         list.setAdapter(adapter);
         return view;
     }

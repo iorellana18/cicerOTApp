@@ -45,7 +45,7 @@ public class Adapter extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.blue_person));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_collections_black_48dp));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_whatshot_black_48dp));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_email_black_48dp));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_chat_black_48dp));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -89,7 +89,7 @@ public class Adapter extends AppCompatActivity {
                         tab.setIcon(R.mipmap.ic_whatshot_black_48dp);
                         break;
                     case 3:
-                        tab.setIcon(R.mipmap.ic_email_black_48dp);
+                        tab.setIcon(R.drawable.ic_chat_black_48dp);
                         break;
                 }
             }
