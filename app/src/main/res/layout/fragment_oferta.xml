@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:text="$19.750"
         android:textSize="35dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
 
@@ -47,6 +48,7 @@
         android:layout_height="wrap_content"
         android:text="Tomado 25 veces"
         android:textSize="25dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
     <TextView
@@ -56,6 +58,7 @@
         android:layout_height="wrap_content"
         android:text="15 Likes"
         android:textSize="25dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
 
@@ -75,7 +78,7 @@
         android:layout_height="wrap_content"
         android:text="Este lugar es muy bonito y yo soy el mejor guía"
         android:textSize="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_margin="20dp"
         />
 
 </RelativeLayout>

@@ -14,14 +14,12 @@ public class GalleryActivity extends Fragment {
     GalleryGridAdapter adapter;
     int[] imagenes = {
             R.drawable.paisaje2,
-            R.drawable.montana,
-            R.drawable.ic_create_new_folder_black_48dp
+            R.drawable.ic_library_add_black_48dp
     };
 
 
     String[] nombres = new String[]{
-            "Vacaciones 2012",
-            "Vacaciones 2013",
+            "Paseo en la nieve",
             "Nuevo"
     };
 

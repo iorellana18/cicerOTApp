@@ -1,11 +1,14 @@
 package cl.usach.CICEROT;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class HotsActivity extends Fragment {
@@ -55,6 +58,23 @@ public class HotsActivity extends Fragment {
 
         adapter = new HotsListAdapter(getContext(), titulo, imagenes,likes,guias,descripcion,precios);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                switch (position) {
+                    case 0:
+                        Intent newActivity = new Intent(getActivity(), OfertasActivity.class);
+                        startActivity(newActivity);
+                        break;
+
+
+                }
+
+
+            }
+        });
         return view;
-    }
+}
 }
