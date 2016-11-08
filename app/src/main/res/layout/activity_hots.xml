@@ -7,6 +7,7 @@
     <ListView
         android:id="@+id/listNotices"
         android:layout_width="match_parent"
+        android:clickable="true"
         android:layout_height="wrap_content" >
 
 

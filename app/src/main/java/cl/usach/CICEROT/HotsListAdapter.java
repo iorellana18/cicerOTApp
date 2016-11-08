@@ -79,6 +79,8 @@ public class HotsListAdapter extends BaseAdapter {
         textDescription.setText(descripciones[position]);
         textPrices.setText(precios[position]);
 
+
+
         return itemView;
     }
 }

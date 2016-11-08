@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -51,6 +54,17 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         />
+
+        <ImageView
+            android:id="@+id/Like"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/VecesOferta"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_thumb_up_black_48dp"
+            android:tint="@color/SeriousGray"/>
     <TextView
         android:id="@+id/LikesOferta"
         android:layout_below="@+id/VecesOferta"
@@ -78,7 +92,65 @@
         android:layout_height="wrap_content"
         android:text="Este lugar es muy bonito y yo soy el mejor guía"
         android:textSize="20dp"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         />
 
+
+    <TextView
+        android:id="@+id/textGuia"
+        android:layout_below="@+id/DescripcionOferta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guia:"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+
+
+
+    <TextView
+        android:id="@+id/nombreGuiaOferta"
+        android:layout_toRightOf="@+id/PerfilOferta"
+        android:layout_below="@+id/textGuia"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:paddingTop="5dp"
+        android:onClick="onCLick"
+        android:clickable="true"
+        android:text="Nombre guia"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageView
+        android:id="@+id/PerfilOferta"
+        android:layout_below="@id/textGuia"
+        android:layout_marginLeft="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@+id/DescripcionOferta"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@+id/PerfilOferta"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
 </RelativeLayout>
+</ScrollView>

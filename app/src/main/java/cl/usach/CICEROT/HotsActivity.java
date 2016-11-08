@@ -59,22 +59,27 @@ public class HotsActivity extends Fragment {
         adapter = new HotsListAdapter(getContext(), titulo, imagenes,likes,guias,descripcion,precios);
         list.setAdapter(adapter);
 
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                switch (position) {
-                    case 0:
-                        Intent newActivity = new Intent(getActivity(), OfertasActivity.class);
-                        startActivity(newActivity);
-                        break;
+
+                Intent intent = new Intent(getActivity(),OfertasActivity.class);
+                intent.putExtra("titulo",titulo[position]);
+                intent.putExtra("imagen",imagenes[position]);
+                intent.putExtra("likes",likes[position]);
+                intent.putExtra("guia",guias[position]);
+                intent.putExtra("descripcion",descripcion[position]);
+                intent.putExtra("precio",precios[position]);
+                intent.putExtra("posicion",position);
+                startActivity(intent);
 
 
-                }
 
 
             }
         });
         return view;
-}
+    }
 }

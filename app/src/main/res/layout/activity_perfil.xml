@@ -5,21 +5,21 @@
 
 
     <fragment
-        android:id="@+id/fragmentOfertas"
+        android:id="@+id/fragmentPerfil"
         android:layout_below="@+id/SearchContent"
-        android:name="cl.usach.CICEROT.OfertasFragment"
+        android:name="cl.usach.CICEROT.PerfilFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/SearchProfile"
+        android:id="@+id/SearchPerfil"
         android:layout_width="match_parent"
         android:layout_marginRight="30dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingLeft="20dp"
         android:layout_height="35dp"
-        android:layout_toRightOf="@+id/searchIcon"
+        android:layout_toRightOf="@+id/searchIconPerfil"
         android:layout_marginTop="5dp"
         android:inputType="text"
         android:textColor="@color/colorPrimary"
@@ -30,7 +30,7 @@
         android:hint="Búsqueda"/>
 
     <ImageView
-        android:id="@+id/backIcon"
+        android:id="@+id/backIconPerfil"
         android:paddingRight="5dp"
         android:layout_width="40dp"
         android:paddingLeft="20dp"
@@ -43,10 +43,10 @@
         />
 
     <ImageView
-        android:id="@+id/searchIcon"
+        android:id="@+id/searchIconPerfil"
         android:layout_width="20dp"
         android:layout_height="30dp"
-        android:layout_toRightOf="@+id/backIcon"
+        android:layout_toRightOf="@+id/backIconPerfil"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
@@ -61,16 +61,5 @@
         android:layout_height="2dp"
         android:background="@android:color/darker_gray"/>
 
-
-    <ImageView
-        android:id="@+id/plusIcon"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_margin="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/blue_plus"
-        />
 
 </RelativeLayout>
