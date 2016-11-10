@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 /**
  * Created by Ian on 04-11-2016.
@@ -15,6 +14,6 @@ public class pruebasActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View android = inflater.inflate(R.layout.activity_profile, container, false);
+        View android = inflater.inflate(R.layout.fragment_miperfil, container, false);
         return android;
     }}

@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/fragmentPerfil"
         android:layout_below="@+id/SearchContent"
-        android:name="cl.usach.CICEROT.PerfilFragment"
+        android:name="cl.usach.CICEROT.Perfil.PerfilFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -21,11 +21,11 @@
         android:layout_height="35dp"
         android:layout_toRightOf="@+id/searchIconPerfil"
         android:layout_marginTop="5dp"
-        android:inputType="text"
         android:textColor="@color/colorPrimary"
         android:layout_alignParentTop="true"
         android:textColorHint="@color/colorPrimary"
         android:textColorLink="@color/colorPrimary"
+        android:background="@drawable/invisible_highlight"
         android:textSize="20sp"
         android:hint="Búsqueda"/>
 
@@ -40,6 +40,7 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_arrow_back_white_48dp"
         android:tint="@color/colorPrimary"
+        android:background="@drawable/invisible_highlight"
         />
 
     <ImageView

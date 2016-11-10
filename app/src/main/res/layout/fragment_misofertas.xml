@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/photoOferta"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="180dp"
+            android:layout_marginBottom="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/paisaje4" />
+
+        <TextView
+            android:id="@+id/TituloOferta"
+            android:layout_below="@+id/photoOferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Título de la oferta"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@+id/TituloOferta"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/PrecioOferta"
+            android:layout_below="@+id/TituloOferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$19.750"
+            android:textSize="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/VecesOferta"
+            android:layout_below="@+id/PrecioOferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomado 25 veces"
+            android:textSize="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/Like"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/VecesOferta"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_thumb_up_black_48dp"
+            android:tint="@color/SeriousGray"/>
+        <TextView
+            android:id="@+id/LikesOferta"
+            android:layout_below="@+id/VecesOferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15 Likes"
+            android:textSize="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@+id/LikesOferta"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/DescripcionOferta"
+            android:layout_below="@+id/LikesOferta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Este lugar es muy bonito y yo soy el mejor guía"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            />
+
+
+
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@+id/DescripcionOferta"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+
+
+    </RelativeLayout>
+</ScrollView>

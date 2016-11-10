@@ -10,7 +10,20 @@
         android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
         />
+    <FrameLayout
+        android:id="@+id/Ultimos"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/colorPrimary"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coincidencias"
+            android:textSize="20dp"/>
 
+    </FrameLayout>
 
     <EditText
         android:id="@+id/SearchProfile"
@@ -63,28 +76,8 @@
         android:layout_marginRight="30dp"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
-<!-- Muestra lo mismo que hots solo por motivos de presentación
-luego debe cambiarse -->
-    <fragment
-        android:id="@+id/fragment1"
-        android:layout_below="@+id/SearchContent"
-        android:name="cl.usach.CICEROT.Hots.HotsActivity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
-    <FrameLayout
-        android:id="@+id/Ultimos"
-        android:layout_below="@+id/SearchContent"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@color/colorPrimary"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Búsquedas recientes"
-            android:textSize="20dp"/>
 
-    </FrameLayout>
+
 
 </RelativeLayout>

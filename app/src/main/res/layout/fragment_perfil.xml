@@ -43,23 +43,26 @@
     <ImageView
         android:id="@+id/LikeIcon"
         android:layout_below="@+id/nombrePerfil"
-        android:layout_toRightOf="@id/fotoPerfil"
+        android:layout_alignParentRight="true"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="40dp"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
         android:background="@drawable/highlight_white"
         android:padding="5dp"
         android:src="@drawable/ic_thumb_up_black_48dp"
-        android:tint="@color/SeriousGray"/>
+        android:tint="@color/SeriousGray"
+
+        />
 
     <TextView
         android:id="@+id/likesPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LikeIcon"
+        android:layout_centerInParent="true"
         android:textSize="15sp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="45dp"

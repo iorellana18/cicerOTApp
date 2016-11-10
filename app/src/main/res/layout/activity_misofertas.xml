@@ -4,31 +4,29 @@
     android:layout_height="match_parent">
 
 
-    <FrameLayout
-        android:id="@+id/SearchContent"
+    <fragment
+        android:id="@+id/fragmentOfertas"
+        android:layout_below="@+id/SearchContent"
+        android:name="cl.usach.CICEROT.Ofertas.misOfertasFragment"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark"
-        />
+        android:layout_height="match_parent" />
 
-
-    <EditText
+    <TextView
         android:id="@+id/SearchProfile"
         android:layout_width="match_parent"
         android:layout_marginRight="30dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:paddingLeft="20dp"
         android:layout_height="35dp"
-        android:layout_gravity="top"
         android:layout_toRightOf="@+id/searchIcon"
         android:layout_marginTop="5dp"
-        android:inputType="text"
+        android:background="@drawable/invisible_highlight"
         android:textColor="@color/colorPrimary"
         android:layout_alignParentTop="true"
         android:textColorHint="@color/colorPrimary"
         android:textColorLink="@color/colorPrimary"
         android:textSize="20sp"
-        android:background="@color/colorPrimaryDark"
         android:hint="Búsqueda"/>
 
     <ImageView
@@ -40,9 +38,9 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:scaleType="centerCrop"
-        android:background="@drawable/highlightbutton"
         android:src="@mipmap/ic_arrow_back_white_48dp"
         android:tint="@color/colorPrimary"
+        android:background="@drawable/invisible_highlight"
         />
 
     <ImageView
@@ -58,33 +56,13 @@
         />
     <View
         android:layout_width="match_parent"
-        android:layout_below="@+id/SearchProfile"
+        android:layout_marginTop="38dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="@android:color/darker_gray"/>
-<!-- Muestra lo mismo que hots solo por motivos de presentación
-luego debe cambiarse -->
-    <fragment
-        android:id="@+id/fragment1"
-        android:layout_below="@+id/SearchContent"
-        android:name="cl.usach.CICEROT.Hots.HotsActivity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
-    <FrameLayout
-        android:id="@+id/Ultimos"
-        android:layout_below="@+id/SearchContent"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@color/colorPrimary"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Búsquedas recientes"
-            android:textSize="20dp"/>
 
-    </FrameLayout>
+
 
 </RelativeLayout>
