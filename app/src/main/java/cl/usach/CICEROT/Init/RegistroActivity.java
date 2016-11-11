@@ -25,6 +25,7 @@ public class RegistroActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

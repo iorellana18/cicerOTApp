@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/SearchContent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:paddingRight="5dp"
+        android:layout_width="40dp"
+        android:paddingLeft="20dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/highlightbutton"
+        android:src="@mipmap/ic_arrow_back_white_48dp"
+        android:tint="@color/colorPrimary"
+        />
+
+    <TextView
+        android:layout_toRightOf="@+id/backIcon"
+        android:text="Resultado de la búsqueda"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <FrameLayout
+        android:id="@+id/Ultimos"
+        android:layout_below="@+id/SearchContent"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/colorPrimary"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No se encontraron coincidencias"
+            android:textSize="20dp"/>
+
+    </FrameLayout>
+
+</RelativeLayout>

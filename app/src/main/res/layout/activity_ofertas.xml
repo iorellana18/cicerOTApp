@@ -71,6 +71,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:scaleType="centerCrop"
+        android:clickable="true"
+        android:onClick="onClick"
         android:src="@drawable/blue_add"
         />
 

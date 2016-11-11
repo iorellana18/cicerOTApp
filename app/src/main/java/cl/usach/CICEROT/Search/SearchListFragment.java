@@ -5,6 +5,7 @@ package cl.usach.CICEROT.Search;
  */
 
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -38,6 +39,18 @@ public class SearchListFragment extends ListFragment implements OnItemClickListe
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+        if(position==0) {
+            Intent intent = new Intent(getActivity(), LugarActivity.class);
+            intent.putExtra("palabra", "santiago");
+            startActivity(intent);
+        }else if(position==1){
+            Intent intent = new Intent(getActivity(), LugarActivity.class);
+            intent.putExtra("palabra", "miami");
+            startActivity(intent);
+        }    else if(position==2){
+            Intent intent = new Intent(getActivity(), LugarActivity.class);
+            intent.putExtra("palabra", "la serena");
+            startActivity(intent);
+        }
     }
 }

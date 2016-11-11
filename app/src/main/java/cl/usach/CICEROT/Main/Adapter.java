@@ -18,6 +18,7 @@ import cl.usach.CICEROT.Search.SearchActivity;
 public class Adapter extends AppCompatActivity {
 
     TextView search;
+    TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,6 @@ public class Adapter extends AppCompatActivity {
 
 
         search =(TextView)findViewById(R.id.Searchmain);
-
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +36,8 @@ public class Adapter extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

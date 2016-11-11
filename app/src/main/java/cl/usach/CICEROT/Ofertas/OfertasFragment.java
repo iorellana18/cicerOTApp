@@ -40,11 +40,7 @@ public class OfertasFragment extends Fragment  {
             "Desafía tus miedos"
     };
 
-    int[] fotosGuia = {
-            R.drawable.ian,
-            R.drawable.elitos,
-            R.drawable.ic_person_black_48dp
-    };
+
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -67,6 +63,7 @@ public class OfertasFragment extends Fragment  {
         String description = getActivity().getIntent().getStringExtra("descripcion");
         final int position = getActivity().getIntent().getIntExtra("posicion", 0);
         final String guide = getActivity().getIntent().getStringExtra("guia");
+        final int fotoGuia = getActivity().getIntent().getIntExtra("fotosGuia",0);
 
         imagen.setImageResource(image);
         titulo.setText(title);
@@ -74,14 +71,14 @@ public class OfertasFragment extends Fragment  {
         likes.setText(megusta);
         tomado.setText(veces[position]);
         descripcion.setText(longDescripcion[position]);
-        imagenGuia.setImageResource(fotosGuia[position]);
+        imagenGuia.setImageResource(fotoGuia);
         nombreGuia.setText(guide);
 
         nombreGuia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PerfilActivity.class);
-                intent.putExtra("foto",fotosGuia[position]);
+                intent.putExtra("foto",fotoGuia);
                 intent.putExtra("nombre",guide);
                 intent.putExtra("posicion",position);
                 intent.putExtra("like",megusta);

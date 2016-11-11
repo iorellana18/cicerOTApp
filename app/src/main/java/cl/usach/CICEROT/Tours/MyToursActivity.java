@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 
+import cl.usach.CICEROT.Init.RegistroActivity;
 import cl.usach.CICEROT.Ofertas.misOfertasActivity;
 import cl.usach.CICEROT.R;
 
@@ -43,11 +45,14 @@ public class MyToursActivity extends Fragment {
     };
 
 
+    ImageView icon;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_tours, container, false);
         grid =(GridView)view.findViewById(R.id.gridAlbum);
+        icon = (ImageView)view.findViewById(R.id.NewIcon);
 
         adapter = new MyToursGridAdapter(getContext(), nombres, imagenes);
         grid.setAdapter(adapter);
@@ -67,6 +72,14 @@ public class MyToursActivity extends Fragment {
                 startActivity(intent);
 
 
+            }
+        });
+
+        icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CreateTour.class);
+                startActivity(intent);
             }
         });
         return view;

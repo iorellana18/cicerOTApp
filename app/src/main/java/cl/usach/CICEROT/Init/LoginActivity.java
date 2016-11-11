@@ -34,6 +34,7 @@ public class LoginActivity extends Activity{
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -41,6 +42,8 @@ public class LoginActivity extends Activity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, Adapter.class);
+
+                intent.putExtra("nombre",Name.getText().toString());
                 startActivity(intent);
             }
         });

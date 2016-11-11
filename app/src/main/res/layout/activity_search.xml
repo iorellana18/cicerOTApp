@@ -67,8 +67,8 @@
 luego debe cambiarse -->
     <fragment
         android:id="@+id/fragment1"
-        android:layout_below="@+id/SearchContent"
-        android:name="cl.usach.CICEROT.Hots.HotsActivity"
+        android:layout_below="@+id/Ultimos"
+        android:name="cl.usach.CICEROT.Search.SearchListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

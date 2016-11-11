@@ -28,7 +28,7 @@
         android:scaleType="centerCrop"
         android:background="@drawable/highlight_white"
         android:padding="5dp"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/perfil"/>
 
         <ImageView
             android:id="@+id/miLikeIcon"

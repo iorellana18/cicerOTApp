@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import cl.usach.CICEROT.R;
 import cl.usach.CICEROT.Search.SearchActivity;
 

@@ -1,12 +1,16 @@
 package cl.usach.CICEROT.Chat;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import cl.usach.CICEROT.R;
 
@@ -16,14 +20,14 @@ public class ChatActivity extends Fragment {
     int[] imagenes = {
             R.drawable.ian,
             R.drawable.elitos,
-            R.mipmap.ic_person_black_48dp
+            R.drawable.juan
     };
 
 
     String[] nombres = new String[]{
             "Ian Orellana",
             "Elías González",
-            "Guía Asesino777",
+            "Juan Perez",
     };
 
 
@@ -36,6 +40,16 @@ public class ChatActivity extends Fragment {
 
         adapter = new ChatListAdapter(getContext(), nombres, imagenes);
         list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+
+                Toast toast = Toast.makeText(getContext(), "Función por implementar",Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
         return view;
     }
 }

@@ -43,7 +43,7 @@ public class HotsActivity extends Fragment {
     String[] guias = new String[]{
             "Ian Orellana",
             "Elías González",
-            "Guia asesino777",
+            "Juan Perez",
     };
     String[] descripcion = new String[]{
             "Una noche llena de sorpresas",
@@ -51,6 +51,11 @@ public class HotsActivity extends Fragment {
             "Desafía tus miedos",
     };
 
+    int[] fotosGuia = {
+            R.drawable.ian,
+            R.drawable.elitos,
+            R.drawable.juan
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -75,6 +80,7 @@ public class HotsActivity extends Fragment {
                 intent.putExtra("descripcion",descripcion[position]);
                 intent.putExtra("precio",precios[position]);
                 intent.putExtra("posicion",position);
+                intent.putExtra("fotosGuia",fotosGuia[position]);
                 startActivity(intent);
 
 
