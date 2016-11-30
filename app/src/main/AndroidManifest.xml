@@ -2,13 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cl.usach.CICEROT">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".Chat.ChatLife"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:hardwareAccelerated="true">
+        android:hardwareAccelerated="true"
+        >
 
         <activity
             android:name=".Init.MainActivity"
@@ -62,6 +66,10 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".Chat.MainActivity"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoActionBar">
+     </activity>
     </application>
 
 </manifest>

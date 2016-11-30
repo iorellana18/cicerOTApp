@@ -1,7 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <!-- Search, should appear as action button -->
-    <item android:id="@+id/share"
+    <item android:id="@+id/edit"
         android:title="Editar Perfil"
+        />
+    <item android:id="@+id/close"
+        android:title="Cerrar Sesión"
         />
 
 </menu>
