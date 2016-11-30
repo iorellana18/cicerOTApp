@@ -1,6 +1,7 @@
 package cl.usach.CICEROT.Chat;
 
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -13,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -92,19 +92,26 @@ private class MessagesAdapter extends ArrayAdapter<Message> {
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams)nameView.getLayoutParams();
         int sdk = Build.VERSION.SDK_INT;
         if (message.getmSender().equals("Barun")){
-            if (sdk >= Build.VERSION_CODES.BASE) {
-                nameView.setBackground(getDrawable(R.color.colorPrimaryDark));
-//                iv.setImageResource(R.drawable.ian);
-            } else{
-                nameView.setBackgroundDrawable(getDrawable(R.drawable.blue_mail));
+            if(message.getMtext().length()<20) {
+                nameView.setBackground(getDrawable(R.drawable.chat1));
+
+            }else{
+                nameView.setBackground(getDrawable(R.drawable.chat1grande));
+                nameView.setPadding(70,20,50,50);
+
+
             }
+
             layoutParams.gravity = Gravity.RIGHT;
         }else{
-            if (sdk >= Build.VERSION_CODES.BASE) {
-                nameView.setBackground(getDrawable(R.drawable.ic_chat_black_48dp));
+            if (message.getMtext().length()<20) {
+                nameView.setBackground(getDrawable(R.drawable.chat2));
+                nameView.setTextColor(Color.BLACK);
 
             } else{
-                nameView.setBackgroundDrawable(getDrawable(R.drawable.blue_folder));
+                nameView.setBackground(getDrawable(R.drawable.chat2grande));
+                nameView.setPadding(50, 20, 70, 50);
+                nameView.setTextColor(Color.BLACK);
             }
             layoutParams.gravity = Gravity.LEFT;
 

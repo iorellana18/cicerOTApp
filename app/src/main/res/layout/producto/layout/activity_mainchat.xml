@@ -3,12 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/message_list"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
 
-        />
 
     <EditText
         android:id="@+id/new_message"
@@ -27,5 +22,15 @@
         android:layout_alignParentBottom="true"
         android:textColor="@color/colorPrimary"
         android:background="@color/colorPrimaryDark"
+
+        />
+    <ListView
+        android:id="@+id/message_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:dividerHeight="0dp"
+        android:divider="@null"
+        android:layout_above="@+id/new_message"
         />
 </RelativeLayout>
