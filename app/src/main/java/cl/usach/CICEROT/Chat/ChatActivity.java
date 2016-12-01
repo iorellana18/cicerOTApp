@@ -45,9 +45,8 @@ public class ChatActivity extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-
-                Toast toast = Toast.makeText(getContext(), "Función por implementar",Toast.LENGTH_SHORT);
-                toast.show();
+                Intent intent = new Intent(getActivity(),MainActivity.class);
+                startActivity(intent);
             }
         });
         return view;

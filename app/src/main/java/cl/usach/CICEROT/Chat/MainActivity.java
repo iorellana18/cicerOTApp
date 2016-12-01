@@ -23,8 +23,6 @@ import java.util.Date;
 import cl.usach.CICEROT.R;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener,MessageSource.MessagesCallbacks{
-public static final String USER_EXTRA = "USER";
-public static final String TAG = "ChatActivity";
 private ArrayList<Message> mMessages;
 private MessagesAdapter mAdapter;
 private String mRecipient;
@@ -33,7 +31,7 @@ private Date mLastMessageDate = new Date();
 private String mConvoId;
 private MessageSource.MessagesListener mListener;
 
-    ImageView iv;
+
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
