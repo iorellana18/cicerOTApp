@@ -2,5 +2,5 @@
 <bitmap
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/ic_chat_bubble_black_48dp"
-    android:tint="@color/neige"
+    android:tint="@color/colorPrimaryDark"
     />

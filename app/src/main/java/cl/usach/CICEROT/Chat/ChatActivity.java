@@ -46,6 +46,8 @@ public class ChatActivity extends Fragment {
                                     int position, long id) {
 
                 Intent intent = new Intent(getActivity(),MainActivity.class);
+                intent.putExtra("nombre",nombres[position]);
+                intent.putExtra("foto",imagenes[position]);
                 startActivity(intent);
             }
         });

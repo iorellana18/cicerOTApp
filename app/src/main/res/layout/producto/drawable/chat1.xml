@@ -2,5 +2,5 @@
 <bitmap
 xmlns:android="http://schemas.android.com/apk/res/android"
 android:src="@drawable/ic_mode_comment_black_48dp"
-android:tint="@color/colorPrimaryDark"
+android:tint="@color/neige"
     />

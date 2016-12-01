@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
+
 import cl.usach.CICEROT.R;
 
 /**
@@ -53,6 +56,10 @@ public class PerfilFragment extends Fragment  {
         String nombrePerfil = getActivity().getIntent().getStringExtra("nombre");
         int position = getActivity().getIntent().getIntExtra("posicion", 0);
         String megusta = getActivity().getIntent().getStringExtra("like");
+
+
+
+
 
         fotoPortada.setImageResource(portadas[position]);
         fotoPerfil.setImageResource(perfil);

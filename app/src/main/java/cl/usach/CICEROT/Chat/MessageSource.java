@@ -28,7 +28,7 @@ public class MessageSource {
         String key = sDateFormat.format(date);
         HashMap<String, String> msg = new HashMap<>();
         msg.put(COLUMN_TEXT, message.getMtext());
-        msg.put(COLUMN_SENDER,"Barun");
+        msg.put(COLUMN_SENDER,"Yo");
         sRef.child(convoId).child(key).setValue(msg);
     }
 

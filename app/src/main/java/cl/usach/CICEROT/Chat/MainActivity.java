@@ -1,6 +1,7 @@
 package cl.usach.CICEROT.Chat;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
+import cl.usach.CICEROT.Init.Usuario;
 import cl.usach.CICEROT.R;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener,MessageSource.MessagesCallbacks{
@@ -30,25 +32,46 @@ private ListView mListView;
 private Date mLastMessageDate = new Date();
 private String mConvoId;
 private MessageSource.MessagesListener mListener;
-
+    TextView nombre;
+    ImageView imagen;
+    Usuario user;
+    ImageView backIcon;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainchat);
-        mRecipient = "Rohit";
+        mRecipient = "Titulo";
         mListView = (ListView)findViewById(R.id.message_list);
         mMessages = new ArrayList<>();
         mAdapter = new MessagesAdapter(mMessages);
         mListView.setAdapter(mAdapter);
+        nombre = (TextView)findViewById(R.id.nombre);
+        imagen = (ImageView)findViewById(R.id.iconMailList);
+        backIcon = (ImageView)findViewById(R.id.backIcon);
 
-        setTitle(mRecipient);
+        nombre.setText(getIntent().getStringExtra("nombre"));
+        imagen.setImageResource(getIntent().getIntExtra("foto", 0));
+
+    mListView.setTranscriptMode(ListView.TRANSCRIPT_MODE_NORMAL);
+    mListView.setStackFromBottom(true);
+
+    backIcon.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            finish();
+        }
+    });
+
+
+    setTitle(mRecipient);
         if (getSupportActionBar() != null){
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         Button sendMessage = (Button)findViewById(R.id.send_message);
         sendMessage.setOnClickListener(this);
-        String[] ids = {"Barun","-", "Rohit"};
+
+        String[] ids = {"Yo","-", nombre.getText().toString()};
         Arrays.sort(ids);
         mConvoId = ids[0]+ids[1]+ids[2];
         mListener = MessageSource.addMessagesListener(mConvoId, this);
@@ -89,29 +112,29 @@ private class MessagesAdapter extends ArrayAdapter<Message> {
         nameView.setText(message.getMtext());
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams)nameView.getLayoutParams();
         int sdk = Build.VERSION.SDK_INT;
-        if (message.getmSender().equals("Barun")){
+        if (message.getmSender().equals("Yo")){
             if(message.getMtext().length()<20) {
-                nameView.setBackground(getDrawable(R.drawable.chat1));
-
+                nameView.setBackground(getDrawable(R.drawable.chat2));
+                nameView.setTextColor(Color.WHITE);
             }else{
-                nameView.setBackground(getDrawable(R.drawable.chat1grande));
-                nameView.setPadding(70,20,50,50);
-
+                nameView.setBackground(getDrawable(R.drawable.chat2grande));
+                nameView.setPadding(70, 20, 50, 50);
+                nameView.setTextColor(Color.WHITE);
 
             }
 
-            layoutParams.gravity = Gravity.RIGHT;
+            layoutParams.gravity = Gravity.LEFT;
         }else{
             if (message.getMtext().length()<20) {
-                nameView.setBackground(getDrawable(R.drawable.chat2));
+                nameView.setBackground(getDrawable(R.drawable.chat1));
                 nameView.setTextColor(Color.BLACK);
 
             } else{
-                nameView.setBackground(getDrawable(R.drawable.chat2grande));
-                nameView.setPadding(50, 20, 70, 50);
+                nameView.setBackground(getDrawable(R.drawable.chat1grande));
+                nameView.setPadding(70, 20, 50, 50);
                 nameView.setTextColor(Color.BLACK);
             }
-            layoutParams.gravity = Gravity.LEFT;
+            layoutParams.gravity = Gravity.RIGHT;
 
         }
         nameView.setLayoutParams(layoutParams);

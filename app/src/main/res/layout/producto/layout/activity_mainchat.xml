@@ -3,27 +3,73 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-    <EditText
-        android:id="@+id/new_message"
-        android:layout_alignParentBottom="true"
+    <FrameLayout
+        android:id="@+id/SearchContent"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="  Escribe un mensaje"/>
+        android:layout_height="70dp"
+        android:background="@drawable/highlightbutton"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:layout_alignParentTop="true"
+        />
 
+    <ImageView
+        android:id="@+id/backIcon"
+        android:paddingRight="5dp"
+        android:layout_width="50dp"
+        android:paddingLeft="20dp"
+        android:layout_height="70dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/highlightbutton"
+        android:src="@mipmap/ic_arrow_back_white_48dp"
+        android:tint="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textColor="@color/colorPrimary"
+        android:layout_toLeftOf="@+id/iconMailList"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/iconMailList"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="10dp"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="4dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/elitos" />
     <Button
         android:id="@+id/send_message"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:text="Enviar"
-        android:layout_marginBottom="10dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:textColor="@color/colorPrimary"
         android:background="@color/colorPrimaryDark"
 
         />
+    <EditText
+        android:id="@+id/new_message"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="  Escribe un mensaje"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/send_message"
+        android:selectAllOnFocus="false"/>
+
+
     <ListView
         android:id="@+id/message_list"
         android:layout_width="match_parent"
@@ -31,6 +77,8 @@
         android:background="@color/colorPrimary"
         android:dividerHeight="0dp"
         android:divider="@null"
+        android:layout_alignEnd="@+id/send_message"
+        android:layout_below="@+id/SearchContent"
         android:layout_above="@+id/new_message"
         />
 </RelativeLayout>
