@@ -5,9 +5,13 @@ package cl.usach.CICEROT.Init;
  */
         import android.content.Intent;
         import android.database.Cursor;
+        import android.graphics.Bitmap;
+        import android.graphics.BitmapFactory;
         import android.net.Uri;
         import android.os.Bundle;
+        import android.os.Environment;
         import android.provider.MediaStore;
+        import android.support.annotation.NonNull;
         import android.support.design.widget.CoordinatorLayout;
         import android.support.design.widget.FloatingActionButton;
         import android.support.v7.app.AppCompatActivity;
@@ -15,7 +19,20 @@ package cl.usach.CICEROT.Init;
         import android.support.v7.widget.Toolbar;
         import android.util.Log;
         import android.view.View;
+        import android.widget.ImageView;
 
+        import com.google.android.gms.tasks.OnFailureListener;
+        import com.google.android.gms.tasks.OnSuccessListener;
+        import com.google.firebase.storage.FileDownloadTask;
+        import com.google.firebase.storage.FirebaseStorage;
+        import com.google.firebase.storage.StorageReference;
+        import com.google.firebase.storage.UploadTask;
+
+        import java.io.File;
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+
+        import cl.usach.CICEROT.Main.Adapter;
         import cl.usach.CICEROT.R;
 
 public class Test extends AppCompatActivity implements View.OnClickListener {
@@ -24,7 +41,10 @@ public class Test extends AppCompatActivity implements View.OnClickListener {
 
     CoordinatorLayout coordinatorLayout;
     FloatingActionButton btnSelectImage;
-    AppCompatImageView imgView;
+    ImageView imgView;
+
+
+
 
 
     @Override
@@ -38,8 +58,12 @@ public class Test extends AppCompatActivity implements View.OnClickListener {
         // Find the views...
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         btnSelectImage = (FloatingActionButton) findViewById(R.id.btnSelectImage);
-        imgView = (AppCompatImageView) findViewById(R.id.imgView);
+        imgView = (ImageView) findViewById(R.id.imgView);
 
+
+        String link = getIntent().getStringExtra("imagen");
+        Bitmap bitmap = BitmapFactory.decodeFile(link);
+        imgView.setImageBitmap(bitmap);
         btnSelectImage.setOnClickListener(this);
 
     }
@@ -55,14 +79,51 @@ public class Test extends AppCompatActivity implements View.OnClickListener {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PICTURE) {
-                // Get the url from data
+                // Obtener dato
                 Uri selectedImageUri = data.getData();
                 if (null != selectedImageUri) {
-                    // Get the path from the Uri
+                    // Obtener el path de la uri
                     String path = getPathFromURI(selectedImageUri);
                     Log.i("Wats", "Image Path : " + path);
-                    // Set the image in ImageView
-                    imgView.setImageURI(selectedImageUri);
+                    FirebaseStorage storage = FirebaseStorage.getInstance();
+                    StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com");
+                    final StorageReference riversRef = storageRef.child("ian.jpg");
+                    UploadTask uploadTask = riversRef.putFile(selectedImageUri);
+
+
+                    //imgView.setImageURI(selectedImageUri);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                        }
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            FirebaseStorage storage = FirebaseStorage.getInstance();
+                            StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com").child("ian.jpg");
+
+                            try {
+                                final File localFile = File.createTempFile("images", "jpg");
+                                storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                        System.out.println(localFile.getAbsolutePath());
+                                        Intent intent = new Intent(Test.this, Adapter.class);
+                                        intent.putExtra("link",localFile.getAbsolutePath());
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//elimina anteriores activities
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                    }
+                                });
+                            } catch (IOException e ) {
+                                System.out.println(e);
+                            }
+                        }
+                    });
                 }
             }
         }

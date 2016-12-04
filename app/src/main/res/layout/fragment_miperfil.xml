@@ -28,7 +28,32 @@
         android:scaleType="centerCrop"
         android:background="@drawable/highlight_white"
         android:padding="5dp"
-        android:src="@drawable/perfil"/>
+        android:src="@drawable/perfil"    />
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="90dp"
+            android:paddingLeft="30dp"
+            android:layout_height="30dp"
+            android:text="Editar"
+            android:background="@drawable/highlight_invisible"
+            android:layout_alignTop="@+id/miFoto"
+            android:layout_alignEnd="@+id/miFoto"
+            android:layout_marginTop="100dp"
+            android:onClick="onClick"
+            android:textSize="20sp"
+            android:clickable="true"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_photo_camera_black_48dp"
+            android:layout_alignTop="@+id/miFoto"
+            android:layout_alignEnd="@+id/miFoto"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="100dp"
+        android:tint="@color/SeriousGray"
+        />
 
         <ImageView
             android:id="@+id/miLikeIcon"

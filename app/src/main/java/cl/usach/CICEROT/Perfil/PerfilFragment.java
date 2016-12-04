@@ -1,6 +1,7 @@
 package cl.usach.CICEROT.Perfil;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -8,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import cl.usach.CICEROT.Init.Test;
 import cl.usach.CICEROT.R;
 
 /**
@@ -27,7 +30,7 @@ public class PerfilFragment extends Fragment  {
     TextView nombre;
     TextView likes;
     TextView descripciones;
-
+    TextView botonFoto;
 
 
     int[] portadas = {
@@ -51,6 +54,7 @@ public class PerfilFragment extends Fragment  {
         nombre = (TextView)view.findViewById(R.id.nombrePerfil);
         likes = (TextView)view.findViewById(R.id.likesPerfil);
         descripciones = (TextView)view.findViewById(R.id.descripcionPerfil);
+        botonFoto = (TextView)view.findViewById(R.id.editText);
 
         int perfil = getActivity().getIntent().getIntExtra("foto",0);
         String nombrePerfil = getActivity().getIntent().getStringExtra("nombre");

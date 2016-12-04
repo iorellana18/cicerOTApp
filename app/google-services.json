@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "236623771954",
+    "firebase_url": "https://chatito-eff08.firebaseio.com",
+    "project_id": "chatito-eff08",
+    "storage_bucket": "chatito-eff08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236623771954:android:8852acec4d617f9e",
+        "android_client_info": {
+          "package_name": "cl.usach.CICEROT"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236623771954-0u3htest6r478h13rlcmkkf83m3dbkdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwB1HaXRwv6m8Xk6oikwvvYoLZUF6frTU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
