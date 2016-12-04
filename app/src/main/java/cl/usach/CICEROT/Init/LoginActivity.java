@@ -2,8 +2,11 @@ package cl.usach.CICEROT.Init;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +17,14 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
 import cl.usach.CICEROT.Main.Adapter;
@@ -88,8 +98,36 @@ public class LoginActivity extends Activity{
                             }
                         }
                         if(flag){
+
+                            FirebaseStorage storage = FirebaseStorage.getInstance();
+                            StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com").child("perfil/"+user.getNombre().toLowerCase()+".jpg");
+                            final String nombre = user.getNombre();
+                            try {
+                                final File localFile = File.createTempFile("images", "jpg");
+                                storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                        Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                                        System.out.println(localFile.getAbsolutePath());
+                                        // imagen.setImageBitmap(bitmap);
+                                        Intent intent = new Intent(LoginActivity.this, Adapter.class);
+                                        intent.putExtra("link",localFile.getAbsolutePath());
+                                        intent.putExtra("nombre",nombre);
+                                        startActivity(intent);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                    }
+                                });
+                            } catch (IOException e ) {
+                                System.out.println(e);
+                            }
+
+
+
                             Intent intent = new Intent(LoginActivity.this, Adapter.class);
-                            intent.putExtra("nombre",user.getNombre());
+
                             startActivity(intent);
                             finish();
                         }else{

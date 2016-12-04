@@ -56,6 +56,7 @@ public class MyProfileActivity extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Test.class);
                 intent.putExtra("imagen",getActivity().getIntent().getStringExtra("link"));
+                intent.putExtra("nombre",getActivity().getIntent().getStringExtra("nombre"));
                 startActivity(intent);
             }
         });

@@ -85,9 +85,12 @@ public class Test extends AppCompatActivity implements View.OnClickListener {
                     // Obtener el path de la uri
                     String path = getPathFromURI(selectedImageUri);
                     Log.i("Wats", "Image Path : " + path);
+
+                    final String nombre = getIntent().getStringExtra("nombre");
                     FirebaseStorage storage = FirebaseStorage.getInstance();
-                    StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com");
-                    final StorageReference riversRef = storageRef.child("ian.jpg");
+
+                    StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com/perfil");
+                    final StorageReference riversRef = storageRef.child(nombre.toLowerCase()+".jpg");
                     UploadTask uploadTask = riversRef.putFile(selectedImageUri);
 
 
@@ -100,7 +103,7 @@ public class Test extends AppCompatActivity implements View.OnClickListener {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             FirebaseStorage storage = FirebaseStorage.getInstance();
-                            StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com").child("ian.jpg");
+                            StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com/perfil").child(nombre.toLowerCase()+".jpg");
 
                             try {
                                 final File localFile = File.createTempFile("images", "jpg");
