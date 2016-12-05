@@ -53,7 +53,7 @@ public class MyToursActivity extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tours, container, false);
         grid =(GridView)view.findViewById(R.id.gridAlbum);
         icon = (ImageView)view.findViewById(R.id.NewIcon);
-
+        final String nombre = getActivity().getIntent().getStringExtra("nombre");
         adapter = new MyToursGridAdapter(getContext(), nombres, imagenes);
         grid.setAdapter(adapter);
 
@@ -79,6 +79,8 @@ public class MyToursActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CreateTour.class);
+                intent.putExtra("nombre",nombre);
+                System.out.println(nombre);
                 startActivity(intent);
             }
         });

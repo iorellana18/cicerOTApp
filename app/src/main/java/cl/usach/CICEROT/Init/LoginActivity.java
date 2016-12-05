@@ -78,13 +78,6 @@ public class LoginActivity extends Activity{
 
 
                 ref.addValueEventListener(new ValueEventListener() {
-                    private String snap;
-                    public void setSnap(String snap){
-                        this.snap=snap;
-                    }
-                    public String getSnap(){
-                        return snap;
-                    }
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
                         boolean flag=false;
