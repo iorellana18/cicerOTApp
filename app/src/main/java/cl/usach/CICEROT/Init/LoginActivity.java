@@ -1,6 +1,7 @@
 package cl.usach.CICEROT.Init;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -73,10 +74,8 @@ public class LoginActivity extends Activity{
             @Override
             public void onClick(View v) {
 
-                // Get a reference to our posts
                 Firebase ref = new Firebase("https://chatito-eff08.firebaseio.com/users");
 
-                // Attach an listener to read the data at our posts reference
 
                 ref.addValueEventListener(new ValueEventListener() {
                     private String snap;
@@ -98,7 +97,7 @@ public class LoginActivity extends Activity{
                             }
                         }
                         if(flag){
-
+                            ProgressDialog.show(LoginActivity.this, "Cargando perfil", "Por favor, espere un momento...");
                             FirebaseStorage storage = FirebaseStorage.getInstance();
                             StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com").child("perfil/"+user.getNombre().toLowerCase()+".jpg");
                             final String nombre = user.getNombre();
@@ -107,13 +106,15 @@ public class LoginActivity extends Activity{
                                 storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                                     @Override
                                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                        Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+
                                         System.out.println(localFile.getAbsolutePath());
                                         // imagen.setImageBitmap(bitmap);
                                         Intent intent = new Intent(LoginActivity.this, Adapter.class);
                                         intent.putExtra("link",localFile.getAbsolutePath());
-                                        intent.putExtra("nombre",nombre);
+                                        intent.putExtra("nombre", nombre);
                                         startActivity(intent);
+                                        finish();
+
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -126,10 +127,7 @@ public class LoginActivity extends Activity{
 
 
 
-                            Intent intent = new Intent(LoginActivity.this, Adapter.class);
 
-                            startActivity(intent);
-                            finish();
                         }else{
                             Toast.makeText(getApplicationContext(),"Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                         }
