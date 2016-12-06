@@ -3,8 +3,6 @@ package cl.usach.CICEROT.Init;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -26,8 +24,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 
+import cl.usach.CICEROT.EDA.Usuario;
 import cl.usach.CICEROT.Main.Adapter;
 import cl.usach.CICEROT.R;
 
@@ -99,6 +97,7 @@ public class LoginActivity extends Activity{
                                 storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                                     @Override
                                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
 
                                         System.out.println(localFile.getAbsolutePath());
                                         // imagen.setImageBitmap(bitmap);

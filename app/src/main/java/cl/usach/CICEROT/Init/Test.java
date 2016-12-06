@@ -3,6 +3,7 @@ package cl.usach.CICEROT.Init;
 /**
  * Created by Ian on 01-12-2016.
  */
+        import android.app.ProgressDialog;
         import android.content.Intent;
         import android.database.Cursor;
         import android.graphics.Bitmap;
@@ -83,8 +84,9 @@ public class Test extends AppCompatActivity implements View.OnClickListener {
                 Uri selectedImageUri = data.getData();
                 if (null != selectedImageUri) {
                     // Obtener el path de la uri
-                    String path = getPathFromURI(selectedImageUri);
+                    String path = ImageFilePath.getPath(getApplicationContext(), selectedImageUri);
                     Log.i("Wats", "Image Path : " + path);
+                    System.out.println(selectedImageUri);
 
                     final String nombre = getIntent().getStringExtra("nombre");
                     FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -94,7 +96,8 @@ public class Test extends AppCompatActivity implements View.OnClickListener {
                     UploadTask uploadTask = riversRef.putFile(selectedImageUri);
 
 
-                    //imgView.setImageURI(selectedImageUri);
+                    imgView.setImageURI(Uri.fromFile(new File(path)));
+                    ProgressDialog.show(Test.this, "Cargando foto", "Por favor, espere un momento...");
                     uploadTask.addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception exception) {

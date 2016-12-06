@@ -1,4 +1,4 @@
-package cl.usach.CICEROT.Init;
+package cl.usach.CICEROT.EDA;
 
 /**
  * Created by Ian on 30-11-2016.

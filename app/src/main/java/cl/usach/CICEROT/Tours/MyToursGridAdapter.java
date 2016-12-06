@@ -4,12 +4,15 @@ package cl.usach.CICEROT.Tours;
  * Created by Ian on 07-11-2016.
  */
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
 
 import cl.usach.CICEROT.R;
 
@@ -19,10 +22,10 @@ public class MyToursGridAdapter extends BaseAdapter {
 
     Context context;
     String[] titulos;
-    int[] imagenes;
+    String[] imagenes;
     LayoutInflater inflater;
 
-    public MyToursGridAdapter(Context context, String[] titulos, int[] imagenes) {
+    public MyToursGridAdapter(Context context, String[] titulos, String[] imagenes) {
         this.context = context;
         this.titulos = titulos;
         this.imagenes = imagenes;
@@ -60,7 +63,7 @@ public class MyToursGridAdapter extends BaseAdapter {
 
         //Setea campos
         txtTitle.setText(titulos[position]);
-        Img.setImageResource(imagenes[position]);
+        Img.setImageURI(Uri.fromFile(new File(imagenes[position])));
 
         return itemView;
     }

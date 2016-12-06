@@ -1,43 +1,19 @@
 package cl.usach.CICEROT.Tours;
 
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 
 import cl.usach.CICEROT.EDA.tours;
-import cl.usach.CICEROT.Init.Usuario;
-import cl.usach.CICEROT.Main.Adapter;
 import cl.usach.CICEROT.R;
 
 /**
@@ -67,14 +43,7 @@ public class CreateTour extends Activity {
     }
 
 
-    public static void saveTour(tours tour){
-        HashMap<String, String> msg = new HashMap<>();
-        msg.put("titulo", tour.getTitulo());
-        msg.put("precio", tour.getPrecio());
-        msg.put("descripcion", tour.getDescripcion());
-        msg.put("key", tour.getKey());
-        sRef.push().setValue(msg);
-    }
+
 
     public void setTituloFoto(String tituloFoto){
         this.tituloFoto=tituloFoto;
@@ -113,13 +82,14 @@ public class CreateTour extends Activity {
             @Override
             public void onClick(View v) {
                 if (titulo.getText().toString() != null && precio.getText().toString() != null && descripcion.getText().toString() != null ) {
-                    tours tour = new tours(titulo.getText().toString(), precio.getText().toString(), descripcion.getText().toString(), nombre.toLowerCase());
-                    saveTour(tour);
+                    //tours tour = new tours(titulo.getText().toString(), precio.getText().toString(), descripcion.getText().toString(), nombre.toLowerCase());
+                    //saveTour(tour);
                     // asocia(titulo.getText().toString(),nombre); //asocia usuario con tour
                     Intent intent = new Intent(CreateTour.this,ImageTour.class);
                     intent.putExtra("nombre",nombre);
                     intent.putExtra("titulo",titulo.getText().toString());
-                    //intent.putExtra("user",tour);
+                    intent.putExtra("precio",precio.getText().toString());
+                    intent.putExtra("descripcion",descripcion.getText().toString());
                     startActivity(intent);
                     finish();
                 }

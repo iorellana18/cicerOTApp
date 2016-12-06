@@ -1,7 +1,6 @@
 package cl.usach.CICEROT.Chat;
 
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-import cl.usach.CICEROT.Init.Usuario;
+import cl.usach.CICEROT.EDA.Usuario;
 import cl.usach.CICEROT.R;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener,MessageSource.MessagesCallbacks{

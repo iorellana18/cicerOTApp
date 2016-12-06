@@ -3,6 +3,7 @@ package cl.usach.CICEROT.Tours;
 /**
  * Created by Ian on 01-12-2016.
  */
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -21,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
@@ -31,7 +33,11 @@ import com.google.firebase.storage.UploadTask;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
 
+import cl.usach.CICEROT.EDA.tours;
+import cl.usach.CICEROT.Init.ImageFilePath;
+import cl.usach.CICEROT.Init.LoginActivity;
 import cl.usach.CICEROT.Main.Adapter;
 import cl.usach.CICEROT.R;
 
@@ -42,8 +48,18 @@ public class ImageTour extends AppCompatActivity implements View.OnClickListener
     CoordinatorLayout coordinatorLayout;
     FloatingActionButton btnSelectImage;
     ImageView imgView;
+    private static final Firebase sRef = new Firebase("https://chatito-eff08.firebaseio.com/tours");
 
-
+    public static void saveTour(tours tour){
+        HashMap<String, String> msg = new HashMap<>();
+        msg.put("titulo", tour.getTitulo());
+        msg.put("precio", tour.getPrecio());
+        msg.put("descripcion", tour.getDescripcion());
+        msg.put("key", tour.getKey());
+        msg.put("path",tour.getPath());
+        msg.put("likes", tour.getLikes().concat(" Likes"));
+        sRef.push().setValue(msg);
+    }
 
 
 
@@ -56,7 +72,6 @@ public class ImageTour extends AppCompatActivity implements View.OnClickListener
         setSupportActionBar(toolbar);
 
 
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         btnSelectImage = (FloatingActionButton) findViewById(R.id.btnSelectImage);
         imgView = (ImageView) findViewById(R.id.imgView);
 
@@ -80,11 +95,18 @@ public class ImageTour extends AppCompatActivity implements View.OnClickListener
                 Uri selectedImageUri = data.getData();
                 if (null != selectedImageUri) {
                     // Obtener el path de la uri
-                    String path = getPathFromURI(selectedImageUri);
+                    String path = ImageFilePath.getPath(getApplicationContext(), selectedImageUri);
                     Log.i("Wats", "Image Path : " + path);
 
+                    imgView.setImageURI(Uri.fromFile(new File(path)));
+                    ProgressDialog.show(ImageTour.this, "Cargando tour", "Por favor, espere un momento...");
                     final String nombre = getIntent().getStringExtra("nombre");
                     final String titulo = getIntent().getStringExtra("titulo");
+                    final String precio = getIntent().getStringExtra("precio");
+                    final String descripcion = getIntent().getStringExtra("descripcion");
+                    tours tour = new tours(titulo,precio,descripcion,nombre,path,"0");
+                    saveTour(tour);
+
                     FirebaseStorage storage = FirebaseStorage.getInstance();
 
                     StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com/tours");

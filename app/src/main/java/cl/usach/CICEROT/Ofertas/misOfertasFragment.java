@@ -1,6 +1,7 @@
 package cl.usach.CICEROT.Ofertas;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
 
 import cl.usach.CICEROT.Perfil.PerfilActivity;
 import cl.usach.CICEROT.R;
@@ -29,15 +32,14 @@ public class misOfertasFragment extends Fragment  {
     public static final int Default_value=0;
 
     String[] veces = {
-            "Tomado 20 veces",
-            "Tomado 32 veces"
+            "Tomado 0 veces",
+            "Tomado 0 veces",
+            "Tomado 0 veces",
+            "Tomado 0 veces",
+            "Tomado 0 veces",
+            "Tomado 0 veces"
     };
 
-    String[] longDescripcion = new String[]{
-            "Una noche llena de sorpresas, disfruta de los mejores restaurantes y locales nocturnos, fdghsfhfivcncfhfhjsadfasdvfasvfasvs",
-            "Relajate este verano 1313, ",
-            "Desafía tus miedos"
-    };
 
 
 
@@ -54,18 +56,18 @@ public class misOfertasFragment extends Fragment  {
         descripcion = (TextView)view.findViewById(R.id.DescripcionOferta);
 
         String title = getActivity().getIntent().getStringExtra("titulo");
-        int image = getActivity().getIntent().getIntExtra("imagen", Default_value);
+        String image = getActivity().getIntent().getStringExtra("imagen");
         final String megusta = getActivity().getIntent().getStringExtra("likes");
         String price = getActivity().getIntent().getStringExtra("precio");
         String description = getActivity().getIntent().getStringExtra("descripcion");
         final int position = getActivity().getIntent().getIntExtra("posicion", 0);
 
-        imagen.setImageResource(image);
+        imagen.setImageURI(Uri.fromFile(new File(image)));
         titulo.setText(title);
         precio.setText(price);
         likes.setText(megusta);
         tomado.setText(veces[position]);
-        descripcion.setText(longDescripcion[position]);
+        descripcion.setText(description);
 
 
         return view;

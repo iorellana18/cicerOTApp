@@ -13,6 +13,7 @@ import com.firebase.client.Firebase;
 
 import java.util.HashMap;
 
+import cl.usach.CICEROT.EDA.Usuario;
 import cl.usach.CICEROT.Main.Adapter;
 import cl.usach.CICEROT.R;
 
