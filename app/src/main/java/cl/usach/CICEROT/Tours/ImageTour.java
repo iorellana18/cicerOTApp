@@ -58,7 +58,7 @@ public class ImageTour extends AppCompatActivity implements View.OnClickListener
         msg.put("key", tour.getKey());
         msg.put("path",tour.getPath());
         msg.put("likes", tour.getLikes().concat(" Likes"));
-        sRef.push().setValue(msg);
+        sRef.child(tour.getKey().toLowerCase()).push().setValue(msg);
     }
 
 
@@ -106,25 +106,8 @@ public class ImageTour extends AppCompatActivity implements View.OnClickListener
                     final String descripcion = getIntent().getStringExtra("descripcion");
                     tours tour = new tours(titulo,precio,descripcion,nombre,path,"0");
                     saveTour(tour);
+                    finish();
 
-                    FirebaseStorage storage = FirebaseStorage.getInstance();
-
-                    StorageReference storageRef = storage.getReferenceFromUrl("gs://chatito-eff08.appspot.com/tours");
-                    final StorageReference riversRef = storageRef.child(nombre.toLowerCase().concat(titulo.toLowerCase())+".jpg");
-                    UploadTask uploadTask = riversRef.putFile(selectedImageUri);
-
-
-                    //imgView.setImageURI(selectedImageUri);
-                    uploadTask.addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception exception) {
-                        }
-                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            finish();
-                        }
-                    });
                 }
             }
         }

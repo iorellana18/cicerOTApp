@@ -49,8 +49,7 @@ public class MyToursActivity extends Fragment {
 
         final String nombre = getActivity().getIntent().getStringExtra("nombre");
 
-        final String Name = getActivity().getIntent().getStringExtra("nombre");
-        Firebase ref = new Firebase("https://chatito-eff08.firebaseio.com/tours");
+        Firebase ref = new Firebase("https://chatito-eff08.firebaseio.com/tours").child(nombre.toLowerCase());
 
 
         ref.addValueEventListener(new ValueEventListener() {
